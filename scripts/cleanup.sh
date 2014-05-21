@@ -1,11 +1,11 @@
 #!/bin/bash
 
 # INCLUDES
-source generic_functions.sh
-source ezinit_header.h
+source functions.sh
+source header.h
 
 # start script
-echo -e "$GREEN ********* start : ezinit_cleanup.sh *************** $ENDCOLOR"
+echo -e "$GREEN ********* start : cleanup.sh *************** $ENDCOLOR"
 
 # demande le nom du projet à supprimer
 read -p 'nom du projet à supprimer? : ' PROJNAME
@@ -74,5 +74,5 @@ fi
 
 
 # end of script
-echo -e "$GREEN ********* end : ezinit_cleanup.sh *************** $ENDCOLOR"
+echo -e "$GREEN ********* end : cleanup.sh *************** $ENDCOLOR"
 exit 0;

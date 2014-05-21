@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # INCLUDES
-source generic_functions.sh
-source ezinit_header.h
+source functions.sh
+source header.h
 
 # start script
 echo -e "$GREEN ********* start : ezinit.sh *************** $ENDCOLOR"
@@ -241,7 +241,7 @@ if [ "$GO" == 0 ]; then
 fi
 
 # info
-echo -e "$GREEN si vous desirez annuller les operations effectués éxécuter le script ezinit_cleanup.sh"
+echo -e "$GREEN si vous desirez annuller les operations effectués éxécuter le script cleanup.sh"
 
 # end of script
 echo -e " ********* end : ezinit.sh *************** $ENDCOLOR"

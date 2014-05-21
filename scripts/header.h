@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # INIT VARIABLES
-MODELESDIR="/data/repositories/git/ezinit_full/ezinit_full_modeles/"
+MODELESDIR="/data/repositories/git/ezinit_full/models/"
 MODELEVH=$MODELESDIR"ez_generic_vhost" #generic vhost
 MODELEMYSQL=$MODELESDIR"ez_generic_initdb.sql" # generic database create mysql
 EZSOURCE="/data/home/mpasquesi/DEV/sources/EZ/ezpublish-enterprise-4.5.0-pul.zip" #instance ezpublish vierge
