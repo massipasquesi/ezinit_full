@@ -1,0 +1,16 @@
+@@@@@@@@@@@@@@@@@
+@@@@@ @TODO @@@@@
+@@@@@@@@@@@@@@@@@
+
+# aux alentour des lignes 140 - 150
+- Ajouter un control aprés la mysqlexec et/ou tester la connexion avant
+- Supprimer le fichier temp_ezinitdb.sql aprés utilisation
+
+# à voir
+- Il faudrait pouvoir configurer le nom du vhost et des url des sites eZPublish, comme pour l instant c est en local par default.
+
+# paramètres
+- ajouter dans les paramètres l editeur de texte (pour l'instant en dur : vim)
+
+# scrpts à faire
+- script pour configurer le header interactivement
