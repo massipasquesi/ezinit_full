@@ -8,14 +8,16 @@ Ce script fait :
  - met à jour host dans /etc
 
 
-! Le script utilise vim, donc si vous ne l'avez pas il faudra l'installer !
+! Le script utilise vim comme editeur de texte par default, 
+donc si vous ne l'avez pas il faudra l'installer ou 
+changer le paramètre TXTED dans le header avec le nom de l'executable de votre choix !
 
 
 Le projet comprends :
 -> models (dossier) :
  	- ez_generic_vhost (vhost generique pour eZPublish avec variables qui seront remplacé pendant l'execution du script)
 	- ez_generic_initdb.sql (fichier generique sql pour la création de la base de donné avec variables qui seront remplacé pendant l'execution du script)
-	- header (modèle pour header.h qui contient des variables à configurer)
+	- header (modèle pour header.h qui contient des variables à configurer, à copier et renommer en scripts/header.h)
 
 -> scripts (dossier) :
 	- ezinit.sh (le script à lancer)
@@ -25,7 +27,8 @@ Le projet comprends :
 
 Vous pouvez placer les deux modeles (ez_generic_vhost, ez_generic_initdb.sql) la ou vous voulez. (aussi les laisser ou ils sont ;)
 
-!!! Il faut copier et renommer le fichier models/header in scripts/header.h
+!!! Il faut copier et renommer le fichier models/header in scripts/header.h !!!
+
 La config se fait dans header.h :
 # INIT VARIABLES
 MODELESDIR="/path/to/ezinit_full/models" # chemin vers le dossiers des models
@@ -37,6 +40,7 @@ WEBPATH="/var/www" # chemin des projets web (par default /var/www)
 ADRESSEIP="127.0.0.1" # adresse IP pour le site (normalement 127.0.0.1)
 MYSQLUSR="user" # connexion à mysql : user et pswd
 MYSQLPSWD="password"
+TXTED="vim" # editeur de texte utilisé pendant l'execution du script (vim par default)
 
 
 Le script à lancer est ezinit.sh.

@@ -140,9 +140,9 @@ if [ "$GO" == 0 ]; then
         sudo sed -i "s/{NAME}/$PROJNAME/g" temp_ezinitdb.sql
     
         # ouvre le fichier sql crée pour verifier que tout va bien ;)
-        sudo vim temp_ezinitdb.sql 
+        sudo $TXTED temp_ezinitdb.sql 
     
-        # attend que la verification manuelle soit terminé (fermeture de vim)
+        # attend que la verification manuelle soit terminé (fermeture de $TXTED)
         wait
     
         # se connecte à mysql et execute le create database statement
@@ -204,9 +204,9 @@ if [ "$JUMP" == false ]; then
     sudo sed -i "s/{NAME}/$PROJNAME/g" $VHOST
     
     # ouvre le fichier vhost crée pour verifier que tout va bien ;)
-    sudo vim $VHOST 
+    sudo $TXTED $VHOST 
     
-    # attend que la verification manuelle du vhost soit terminé (fermeture de vim)
+    # attend que la verification manuelle du vhost soit terminé (fermeture de $TXTED)
     wait
 }
 fi
@@ -231,7 +231,7 @@ if [ "$GO" == 0 ]; then
     # met à jour le fichier /etc/hosts
     echo -e "\n$ADRESSEIP    $VHOST\n$ADRESSEIP    admin.$VHOST" | sudo tee -a /etc/hosts
     # ouvre le /etc/hosts pour verification
-    sudo vim /etc/hosts
+    sudo $TXTED /etc/hosts
     # attend la verification
     wait
     

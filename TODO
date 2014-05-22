@@ -13,8 +13,7 @@
 # à voir
 - Il faudrait pouvoir configurer le nom du vhost et des url des sites eZPublish, comme pour l instant c est en local par default.
 
-# paramètres
-- ajouter dans les paramètres l editeur de texte (pour l'instant en dur : vim)
-
 # scrpts à faire
 - script pour configurer le header interactivement
+
+# paramètres

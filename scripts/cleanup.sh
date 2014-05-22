@@ -65,7 +65,7 @@ if [ "$GO" == 0 ]; then
 	sudo sed -i "s/$ADRESSEIP    $PROJNAME.local//g" /etc/hosts
 	sudo sed -i "s/$ADRESSEIP    admin.$PROJNAME.local//g" /etc/hosts
 	# ouvre le /etc/hosts pour verification
-	sudo vim /etc/hosts
+	sudo $TXTED /etc/hosts
 	# attend la verification
 	wait
 	# restart apache
