@@ -2,26 +2,29 @@
 @@@@@ @TODO @@@@@
 @@@@@@@@@@@@@@@@@
 
-# aux alentour des lignes 140 - 150
+### ezinit
+    # aux alentour des lignes 140 - 150
 - Ajouter un control aprés la mysqlexec et/ou tester la connexion avant
 - Supprimer le fichier temp_ezinitdb.sql aprés utilisation
 
-# aux alentour des lignes 50 - 80
-- Substituer la creation d'un dossier temp pour travailler dans le dossier $WORKPATH
-- créer un dossier temp parmi les dossiers ezinit_full et le proposer comme $WORKPATH
-
-# à voir
+    # à voir
+- Verifier l'existance du dossier temp autrement le créer
 - Il faudrait pouvoir configurer le nom du vhost et des url des sites eZPublish, comme pour l instant c est en local par default.
 - nom de la base de donné peut être different du nom du projet
 - montrer la liste des bdd aprés création
+- parametrer ou demander user:group et mode pour le projet EZ
 
-# paramètres
-- verifier les paramètres dans header.h avant de les utiliser
+### paramètres
+- Enlever des paramètres le dossier ezinit_full pour le calculer dans le script
+- Verifier les paramètres dans header.h avant de les utiliser
 - Verifier que un projet et/ou une base de donnée avec le même nom n'existent pas déjà
 - les noms des bases de donnée et donc du projet ne peuvent pas avoir de "-" ou autres symboles
   http://dev.mysql.com/doc/refman/5.0/fr/legal-names.html
   http://fr.openclassrooms.com/informatique/cours/administrez-vos-bases-de-donnees-avec-mysql/creation-d-une-base-de-donnees
 
-# scrpts à faire
+### cleanup
+- ls est double aprés suppression de l'instance web ! à corriger
+
+### scrpts à faire
 - script pour configurer le header interactivement
 - help

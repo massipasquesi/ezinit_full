@@ -45,46 +45,45 @@ if [ "$GO" == 0 ]; then
 
     SOURCETYPE=$TEST
     
-    # se deplace dans le dossier $WEBPATH
-    cd $WEBPATH
-    
     # si $EZSOURCE est un fichier compressé le decompresse après avoir determiné son extension
     if [ "$SOURCETYPE" == 1 ]; then
     	# retrouve l'extension du fichier
     	EXT=$(fileextension $EZSOURCE) 
     	echo -e "$BLUE info : extension du fichier : ${EXT} $ENDCOLOR"
     
-    	# crée un dossier temp et se deplace à l'interieur
-    	mkdir temp/
-    	cd temp/
+    	# se deplace dans le dossier temporaire $WORKPATH
+    	cd $WORKPATH
+        # vide le dossier $WORKPATH
+    	rm -rf $WORKPATH/*
     
     	# decompresse l'archive
     	uncompress $EZSOURCE $EXT
     	TEST=$?
-    	# si ce n'est pas un archive valable efface le dossier temp et fin du script
+    	# si ce n'est pas un archive valable efface le contenu de $WORKPATH et fin du script
     	if [ "$TEST" != 0 ]; then
-    		cd $WEBPATH; rm -rf temp/
+    		rm -rf $WORKPATH/*
     		exit 102;
     	fi
     
     	# assigne à la variable $EZPROJ le nom du dossier extrait
-    	ls -1 . > ../filelist
-    	EZPROJ=`cat ../filelist`
+        EZPROJ=$(ls -1)
     	echo -e "$BLUE info : nom du dossier extrait : ${EZPROJ} $ENDCOLOR"
     
     	# deplace le dossier extrait dans $WEBPATH et efface les fichiers temporaires
     	mv $EZPROJ $WEBPATH
-        rm -rf temp/; rm -f filelist
-    	cd $WEBPATH
+        rm -rf $WORKPATH/*
     
     # si $EZSOURCE est un dossier assign à la variable $EZPROJ son chemin	
     elif [ "$SOURCETYPE" == 2 ]; then
-    	EZPROJ=$EZSOURCE
+        cp -r $EZSOURCE $WEBPATH
+        EZPROJ=$(basename $EZSOURCE)
     fi
     
+    # se deplace dans le dossier $WEBPATH
+    cd $WEBPATH
     
     # renomme et deplace le dossier source avec le nom du projet donnée en prompt
-    mv -v $EZPROJ $WEBPATH$PROJNAME
+    mv -v $EZPROJ $PROJNAME
     
     # liste les fichiers dans $WEBPATH pour verification
     ls -la $WEBPATH
