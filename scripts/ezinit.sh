@@ -74,7 +74,8 @@ if [ "$GO" == 0 ]; then
     
     	# deplace le dossier extrait dans $WEBPATH et efface les fichiers temporaires
     	mv $EZPROJ $WEBPATH
-    	cd $WEBPATH; rm -rf temp/; rm -f filelist
+        rm -rf temp/; rm -f filelist
+    	cd $WEBPATH
     
     # si $EZSOURCE est un dossier assign à la variable $EZPROJ son chemin	
     elif [ "$SOURCETYPE" == 2 ]; then

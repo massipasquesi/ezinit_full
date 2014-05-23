@@ -10,11 +10,6 @@
 - Substituer la creation d'un dossier temp pour travailler dans le dossier $WORKPATH
 - créer un dossier temp parmi les dossiers ezinit_full et le proposer comme $WORKPATH
 
-# nettoyage
-- aprés execution ils restent :
-    - un fichier filelist dans scripts/
-    - un dossier temp/ vide dans scripts/
-
 # à voir
 - Il faudrait pouvoir configurer le nom du vhost et des url des sites eZPublish, comme pour l instant c est en local par default.
 - nom de la base de donné peut être different du nom du projet
@@ -22,6 +17,7 @@
 
 # paramètres
 - verifier les paramètres dans header.h avant de les utiliser
+- Verifier que un projet et/ou une base de donnée avec le même nom n'existent pas déjà
 - les noms des bases de donnée et donc du projet ne peuvent pas avoir de "-" ou autres symboles
   http://dev.mysql.com/doc/refman/5.0/fr/legal-names.html
   http://fr.openclassrooms.com/informatique/cours/administrez-vos-bases-de-donnees-avec-mysql/creation-d-une-base-de-donnees
