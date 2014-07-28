@@ -1,35 +1,40 @@
-Un script bash pour automatiser l'installation d'une instance eZPublish.
-( testé sous ubuntu 11.04/12.04, debian 6/7 avec eZPublish 4.x,  mysql 5.x et apache 2 )
+# EZINIT\_FULL
+
+*Un script bash pour automatiser l'installation d'une instance eZPublish.*
+_*( testé sous ubuntu 11.04/12.04, debian 6/7 avec eZPublish 4.x,  mysql 5.x et apache 2 )*_
 
 Ce script fait :
- - extrait un archive ou copie un dossier existant d'une instance vierge EZ dans le repertoire des sites web
- - crée une base de donné pour l'instance EZ
- - crée un fichier vhost dans sites-available de apache
- - met à jour host dans /etc
+ * extraire un archive ou copie un dossier existant d'une instance vierge EZ dans le repertoire des sites web
+ * créer une base de donné pour l'instance EZ
+ * créer un fichier vhost dans sites-available de apache
+ * mettre à jour host dans /etc
 
 
-! Le script utilise vim comme editeur de texte par default, 
+*! Le script utilise vim comme editeur de texte par default, 
 donc si vous ne l'avez pas il faudra l'installer ou 
-changer le paramètre TXTED dans le header avec le nom de l'executable de votre choix !
+changer le paramètre TXTED dans le header avec le nom de l'executable de votre choix !*
 
 
 Le projet comprends :
--> models (dossier) :
- 	- ez_generic_vhost (vhost generique pour eZPublish avec variables qui seront remplacé pendant l'execution du script)
-	- ez_generic_initdb.sql (fichier generique sql pour la création de la base de donné avec variables qui seront remplacé pendant l'execution du script)
-	- header (modèle pour header.h qui contient des variables à configurer, à copier et renommer en scripts/header.h)
+* models (dossier) :
+ 	* ez_generic_vhost (vhost generique pour eZPublish avec variables qui seront remplacé pendant l'execution du script)
+	* ez_generic_initdb.sql (fichier generique sql pour la création de la base de donné avec variables qui seront remplacé pendant l'execution du script)
+	* header (modèle pour header.h qui contient des variables à configurer, à copier et renommer en scripts/header.h)
 
--> scripts (dossier) :
-	- ezinit.sh (le script à lancer)
-	- functions.sh (fichier qui contient des function utilisées par le script)
-	- cleanup.sh ( script de nettoyage )
+* scripts (dossier) :
+	* ezinit.sh (le script à lancer)
+	* functions.sh (fichier qui contient des function utilisées par le script)
+	* cleanup.sh ( script de nettoyage )
 
 
 Vous pouvez placer les deux modeles (ez_generic_vhost, ez_generic_initdb.sql) la ou vous voulez. (aussi les laisser ou ils sont ;)
 
-!!! Il faut copier et renommer le fichier models/header in scripts/header.h !!!
+*!!! Il faut copier et renommer le fichier models/header in scripts/header.h !!!*
 
+### CONFIG
 La config se fait dans header.h :
+
+```bash
 # INIT VARIABLES
 MODELESDIR="/path/to/ezinit_full/models" # chemin vers le dossiers des models
 MODELEVH=$MODELESDIR"/ez_generic_vhost" # generic vhost
@@ -41,8 +46,9 @@ ADRESSEIP="127.0.0.1" # adresse IP pour le site (normalement 127.0.0.1)
 MYSQLUSR="user" # connexion à mysql : user et pswd
 MYSQLPSWD="password"
 TXTED="vim" # editeur de texte utilisé pendant l'execution du script (vim par default)
+```
 
-
+### EXEC
 Le script à lancer est ezinit.sh.
 Pendant l'execution du script, on vous demandera le nom du projet, qui sera utilisé pour nommer le dossier de l'instance ezpublish, nommer la base de donné et configurere le vhost.
 L'adresse du site eZPublish sera {nom_du_projet}.local et le BO admin.{nom_du_projet}.local .
@@ -58,7 +64,8 @@ s'occupe d'effacer tout ou seulement ce qu'on desire :
  - entrées dans /etc/hosts
 
 
-@@@@@@@ Voir TODO @@@@@@@
+### TODO
+*_@@@@@@@ Voir TODO @@@@@@@_*
 Je pense que on peut faire pas mal d'ameliorations, donc n'hesitez pas à le reprendre e y travailler dessous si vous en avez envie ;)
 
 

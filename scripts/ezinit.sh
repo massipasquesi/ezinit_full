@@ -109,7 +109,6 @@ if [ "$GO" == 0 ]; then
 {
     JUMP=false
 	# CRÉE LA BASE DONNÉ MYSQL POUR LE PROJET
-	# @TODO : remplacé le 'temp_ezinitdb.sql' par une variable
 	# se deplace dans le dossier $WORKPATH
 	cd $WORKPATH
 
@@ -147,6 +146,9 @@ if [ "$GO" == 0 ]; then
     
         # se connecte à mysql et execute le create database statement
         mysqlexec "f" "temp_ezinitdb.sql"
+
+        # supprime temp_ezinitdb.sql
+        rm -v temp_ezinitdb.sql
     }
     fi
 }
