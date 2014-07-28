@@ -1,7 +1,8 @@
 # EZINIT\_FULL
 
-**Un script bash pour automatiser l'installation d'une instance eZPublish.**
-*_( testé sous ubuntu 11.04/12.04, debian 6/7 avec eZPublish 4.x,  mysql 5.x et apache 2 )_*
+**Un script bash pour automatiser l'installation d'une instance eZPublish.
+
+_( testé sous ubuntu 11.04/12.04, debian 6/7 avec eZPublish 4.x,  mysql 5.x et apache 2 )_**
 
 Ce script fait :
  * extraire un archive ou copie un dossier existant d'une instance vierge EZ dans le repertoire des sites web
@@ -10,7 +11,9 @@ Ce script fait :
  * mettre à jour host dans /etc
 
 
-#####! Le script utilise vim comme editeur de texte par default, donc si vous ne l'avez pas il faudra l'installer ou changer le paramètre TXTED dans le header avec le nom de l'executable de votre choix !
+**! Le script utilise vim comme editeur de texte par default, 
+donc si vous ne l'avez pas il faudra l'installer 
+ou changer le paramètre TXTED dans le header avec le nom de l'executable de votre choix !**
 
 
 Le projet comprends :
