@@ -1,8 +1,8 @@
 # EZINIT\_FULL
 
-**Un script bash pour automatiser l'installation d'une instance eZPublish.
+**Un script bash pour automatiser l'installation d'une instance eZPublish.**
 
-_( testé sous ubuntu 11.04/12.04, debian 6/7 avec eZPublish 4.x,  mysql 5.x et apache 2 )_**
+**_( testé sous ubuntu 11.04/12.04, debian 6/7 avec eZPublish 4.x,  mysql 5.x et apache 2 )_**
 
 Ce script fait :
  * extraire un archive ou copie un dossier existant d'une instance vierge EZ dans le repertoire des sites web
