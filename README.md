@@ -1,7 +1,7 @@
 # EZINIT\_FULL
 
-*Un script bash pour automatiser l'installation d'une instance eZPublish.*
-_*( testé sous ubuntu 11.04/12.04, debian 6/7 avec eZPublish 4.x,  mysql 5.x et apache 2 )*_
+**Un script bash pour automatiser l'installation d'une instance eZPublish.**
+*_( testé sous ubuntu 11.04/12.04, debian 6/7 avec eZPublish 4.x,  mysql 5.x et apache 2 )_*
 
 Ce script fait :
  * extraire un archive ou copie un dossier existant d'une instance vierge EZ dans le repertoire des sites web
@@ -10,9 +10,7 @@ Ce script fait :
  * mettre à jour host dans /etc
 
 
-*! Le script utilise vim comme editeur de texte par default, 
-donc si vous ne l'avez pas il faudra l'installer ou 
-changer le paramètre TXTED dans le header avec le nom de l'executable de votre choix !*
+#####! Le script utilise vim comme editeur de texte par default, donc si vous ne l'avez pas il faudra l'installer ou changer le paramètre TXTED dans le header avec le nom de l'executable de votre choix !
 
 
 Le projet comprends :
@@ -27,11 +25,11 @@ Le projet comprends :
 	* cleanup.sh ( script de nettoyage )
 
 
+### CONFIG
 Vous pouvez placer les deux modeles (ez_generic_vhost, ez_generic_initdb.sql) la ou vous voulez. (aussi les laisser ou ils sont ;)
 
-*!!! Il faut copier et renommer le fichier models/header in scripts/header.h !!!*
+**!!! Il faut copier et renommer le fichier models/header in scripts/header.h !!!**
 
-### CONFIG
 La config se fait dans header.h :
 
 ```bash
@@ -64,8 +62,7 @@ s'occupe d'effacer tout ou seulement ce qu'on desire :
  - entrées dans /etc/hosts
 
 
-### TODO
-*_@@@@@@@ Voir TODO @@@@@@@_*
+###@@@@@@@ Voir TODO @@@@@@@
 Je pense que on peut faire pas mal d'ameliorations, donc n'hesitez pas à le reprendre e y travailler dessous si vous en avez envie ;)
 
 
