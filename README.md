@@ -1,19 +1,15 @@
 # EZINIT\_FULL
 
-**Un script bash pour automatiser l'installation d'une instance eZPublish.**
+**Un script bash pour automatiser l'installation d'une instance eZPublish sous Ubuntu & Debian.**
 
 **_( testé sous ubuntu 11.04/12.04, debian 6/7 avec eZPublish 4.x,  mysql 5.x et apache 2 )_**
 
+### OVERVIEW
 Ce script fait :
  * extraire un archive ou copie un dossier existant d'une instance vierge EZ dans le repertoire des sites web
  * créer une base de donné pour l'instance EZ
  * créer un fichier vhost dans sites-available de apache
  * mettre à jour host dans /etc
-
-
-**! Le script utilise vim comme editeur de texte par default, 
-donc si vous ne l'avez pas il faudra l'installer 
-ou changer le paramètre TXTED dans le header avec le nom de l'executable de votre choix !**
 
 
 Le projet comprends :
@@ -49,10 +45,18 @@ MYSQLPSWD="password"
 TXTED="vim" # editeur de texte utilisé pendant l'execution du script (vim par default)
 ```
 
+**! Le script utilise vim comme editeur de texte par default, 
+donc si vous ne l'avez pas il faudra l'installer 
+ou changer le paramètre TXTED dans le header avec le nom de l'executable de votre choix !**
+
+
 ### EXEC
 Le script à lancer est ezinit.sh.
+
 Pendant l'execution du script, on vous demandera le nom du projet, qui sera utilisé pour nommer le dossier de l'instance ezpublish, nommer la base de donné et configurere le vhost.
+
 L'adresse du site eZPublish sera {nom_du_projet}.local et le BO admin.{nom_du_projet}.local .
+
 Chaque fois que vim s'ouvre, c'est pour verifier que le traitement sur le fichier en question c'est bien passé. Si necessaire apporter les eventuelles modifications et puis fermer ! Le script attend la fermeture de vim pour continuer !
 
 
