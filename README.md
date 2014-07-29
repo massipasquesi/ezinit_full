@@ -5,14 +5,14 @@
 **_( testé sous ubuntu 11.04/12.04, debian 6/7 avec eZPublish 4.x,  mysql 5.x et apache 2 )_**
 
 ### OVERVIEW
-Ce script fait :
+####Ce script fait :
  * extraire un archive ou copie un dossier existant d'une instance vierge EZ dans le repertoire des sites web
  * créer une base de donné pour l'instance EZ
  * créer un fichier vhost dans sites-available de apache
  * mettre à jour host dans /etc
 
 
-Le projet comprends :
+####Le projet comprends :
 * models (dossier) :
  	* ez_generic_vhost (vhost generique pour eZPublish avec variables qui seront remplacé pendant l'execution du script)
 	* ez_generic_initdb.sql (fichier generique sql pour la création de la base de donné avec variables qui seront remplacé pendant l'execution du script)
@@ -29,7 +29,7 @@ Vous pouvez placer les deux modeles (ez_generic_vhost, ez_generic_initdb.sql) la
 
 **!!! Il faut copier et renommer le fichier models/header in scripts/header.h !!!**
 
-La config se fait dans header.h :
+####La config se fait dans header.h :
 
 ```bash
 # INIT VARIABLES

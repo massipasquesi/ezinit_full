@@ -1,9 +1,10 @@
 # @TODO 
 
-### optimisation
+## optimisation
 * Separer les differentes etapes en functions ou scripts
 * faire une fonction pour suppresion ou autres operations sur les fichiers qui controle par exemple avant si le fichier existe
 
+## ezinit.sh
 ### aux alentour des lignes 140 - 150
 * Ajouter un control aprés la mysqlexec et/ou tester la connexion avant
 * Supprimer le fichier temp\_ezinitdb.sql aprés utilisation
@@ -28,9 +29,9 @@
   http://dev.mysql.com/doc/refman/5.0/fr/legal-names.html
   http://fr.openclassrooms.com/informatique/cours/administrez-vos-bases-de-donnees-avec-mysql/creation-d-une-base-de-donnees
 
-### cleanup
+## cleanup
 * ls est double aprés suppression de l'instance web ! à corriger
 
-### scrpts à faire
+## scrpts à faire
 * script pour configurer le header interactivement
 * help
