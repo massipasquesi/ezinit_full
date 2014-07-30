@@ -15,7 +15,7 @@ fi
 JUMP=false
 # CRÉE LA BASE DONNÉ MYSQL POUR LE PROJET
 # se deplace dans le dossier $WORKPATH
-cd $WORKPATH
+cd $WORKPATH/
 
 # copie le fichier $MODELEMYSQL si existe
 # sinon demande le nom du fichier modele mysql et son chemin

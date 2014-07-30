@@ -11,7 +11,7 @@ echo -e "$GREEN ********* start : cleanup.sh *************** $ENDCOLOR"
 read -p 'nom du projet à supprimer? : ' PROJNAME
 
 # se deplace dans le dossier $WEBPATH
-cd $WEBPATH
+cd $WEBPATH/
 
 # demande si il faut supprimer l'instance EZ dans le repertoire des sites web
 goornotgo "est que il faut supprimer l'instance web ? "
@@ -20,13 +20,14 @@ if [ "$GO" == 0 ]; then
 {
     # supprime l'instance EZ dans le repertoire des sites web
     sudo rm -rf $PROJNAME
-    ls -la $WEBPATH
+    ls -la $WEBPATH/
 }
 fi
 
 # liste les fichiers dans $WEBPATH pour verification
-ls -la $WEBPATH
+ls -la $WEBPATH/
 
+# @TODO besoin du lien symbolic dans /var/www ? mettre en option ?
 # demande si il y a un lien symbolic dans /var/www/ à supprimer
 goornotgo "est que il faut supprimer un lien symbolic dans /var/www/ ?"
 GO=$?
@@ -50,11 +51,11 @@ goornotgo "est que il faut supprimer un vhost ?"
 GO=$?
 if [ "$GO" == 0 ]; then
 	# se deplace dans le dossier sites-availables
-	cd /etc/apache2/sites-available
+	cd /etc/apache2/sites-available/
 	sudo a2dissite $PROJNAME.local
 	sudo /etc/init.d/apache2 reload
 	sudo rm -f $PROJNAME.local
-    ls -la /etc/apache2/sites-available
+    ls -la /etc/apache2/sites-available/
 fi
 
 # demande si il faut supprimer les sites dans /etc/hosts

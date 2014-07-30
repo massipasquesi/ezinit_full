@@ -52,7 +52,7 @@ if [ "$GO" == 0 ]; then
     	echo -e "$BLUE info : extension du fichier : ${EXT} $ENDCOLOR"
     
     	# se deplace dans le dossier temporaire $WORKPATH
-    	cd $WORKPATH
+    	cd $WORKPATH/
         # vide le dossier $WORKPATH
     	rm -rf $WORKPATH/*
     
@@ -80,19 +80,20 @@ if [ "$GO" == 0 ]; then
     fi
     
     # se deplace dans le dossier $WEBPATH
-    cd $WEBPATH
+    cd $WEBPATH/
     
     # renomme et deplace le dossier source avec le nom du projet donnée en prompt
     mv -v $EZPROJ $PROJNAME
     
     # liste les fichiers dans $WEBPATH pour verification
-    ls -la $WEBPATH
+    ls -la $WEBPATH/
     
     # fixe droits et proprietaire:group
-    cd $WEBPATH
+    cd $WEBPATH/
     sudo chown -R $USER:www-data $WEBPATH$PROJNAME
     sudo chmod -R 775 $WEBPATH$PROJNAME
     
+    # faut il proposer de créer un lien symbolique dans /var/www ? mettre en option ?
     # demande si il doit crée un lien symbolic dans /var/www/
     goornotgo "créer un lien symbolic dans /var/www/ ?"
     GO=$?
@@ -110,7 +111,7 @@ if [ "$GO" == 0 ]; then
     JUMP=false
 	# CRÉE LA BASE DONNÉ MYSQL POUR LE PROJET
 	# se deplace dans le dossier $WORKPATH
-	cd $WORKPATH
+	cd $WORKPATH/
 
 	# copie le fichier $MODELEMYSQL si existe
 	# sinon demande le nom du fichier modele mysql et son chemin
@@ -173,7 +174,7 @@ else
 {
     JUMP=false
     # se deplace dans le dossier sites-availables
-    cd /etc/apache2/sites-available
+    cd /etc/apache2/sites-available/
     
     # copie le fichier $MODELEVH si existe
     # sinon demande le nom du fichier vhost model et son chemin
