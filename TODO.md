@@ -1,13 +1,14 @@
 # @TODO 
 
 ## optimisation
-* Separer les differentes etapes en functions ou scripts > en cours
-* faire une fonction pour suppresion ou autres operations sur les fichiers qui controle par exemple avant si le fichier existe
+* Separer les differentes etapes en functions ou scripts ->[^c]
+* Faire une fonction pour suppresion ou autres operations sur les fichiers qui controle par exemple avant si le fichier existe
+* Definir les codes d'erreur
 
 ## ezinit.sh
 ### creation base de données
-* Ajouter un control aprés la mysqlexec et/ou tester la connexion avant
-* Supprimer le fichier temp\_ezinitdb.sql aprés utilisation
+* Ajouter un control aprés la mysqlexec et/ou tester la connexion avant ->[^c]
+* ~~Supprimer le fichier temp\_ezinitdb.sql aprés utilisation~~
 * remplacer le fichier 'temp\_ezinitdb.sql' par une variable
 * nom de la base de donné peut être different du nom du projet
 * montrer la liste des bdd aprés création
@@ -42,3 +43,8 @@
 
 ## traductions
 * anglais
+
+
+
+
+[^c]: **en cours**

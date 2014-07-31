@@ -140,6 +140,10 @@ uncompress() {
 #
 # @TODO : quoi faire si on a pas passé de parametres ?
 mysqlexec() {
+    testmysqlconnexion
+    if [ $? -ne 0 ]; then
+        echo -e "$RED mysql user et/ou password ne sont pas valides !$ENDCOLOR"
+        return 90
 	if [ "$1" == "f" ]; then
         if [ "$MYSQLPSWD" == "" ]; then
             mysql -u $MYSQLUSR --default-character-set=utf8 < "$2"
