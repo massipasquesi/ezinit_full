@@ -17,6 +17,7 @@
 ## functions.sh
 ### mysqlexec
 * ~~demander en prompt user et mdp pour la connexion mysql~~
+
 ### testmysqlconnexion
 * ~~verifier si $MYSQLUSER et $MYSQLPSWD sont definies~~
     * peut être les initialiser à NULL ?
