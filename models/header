@@ -4,11 +4,11 @@
 # tous les path doivent être absolues à partir de / (racine)
 # et les path des dossiers NE doivent PAS avoir de / (slash) à la fin 
 EZINITPATH="/path/to/ezinit_full"
-MODELESDIR="$EZINITPATH/models/" # chemin vers le dossiers des models
-MODELEVH="$MODELESDIR/ez_generic_vhost" # generic vhost
-MODELEMYSQL="$MODELESDIR/ez_generic_initdb.sql" # generic database create mysql
+MODELESDIR="${EZINITPATH}/models/" # chemin vers le dossiers des models
+MODELEVH="${MODELESDIR}/ez_generic_vhost" # generic vhost
+MODELEMYSQL="${MODELESDIR}/ez_generic_initdb.sql" # generic database create mysql
 EZSOURCE="/path/to/ezpublish.zip" # instance ezpublish vierge (zip ou dossier)
-WORKPATH="$EZINITPATH/temp" # dossier pour créer des fichiers temporaires 
+WORKPATH="${EZINITPATH}/temp" # dossier pour créer des fichiers temporaires 
 WEBPATH="/var/www" # chemin du dossier ou installer le projet web EZ (par default /var/www)
 ADRESSEIP="127.0.0.1" # adresse IP pour le site (normalement 127.0.0.1)
 TXTED="vim" # editeur de texte utilisé pendant l'execution du script (vim par default)

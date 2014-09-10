@@ -40,8 +40,6 @@ EZSOURCE="/path/to/ezpublish.zip" # instance ezpublish vierge (zip ou dossier)
 WORKPATH="/tmp" # dossier pour créer des fichiers temporaires 
 WEBPATH="/var/www" # chemin des projets web (par default /var/www)
 ADRESSEIP="127.0.0.1" # adresse IP pour le site (normalement 127.0.0.1)
-MYSQLUSR="user" # connexion à mysql : user et pswd
-MYSQLPSWD="password"
 TXTED="vim" # editeur de texte utilisé pendant l'execution du script (vim par default)
 ```
 

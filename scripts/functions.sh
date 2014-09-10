@@ -14,6 +14,11 @@ YELLOW='\033[1;33m'
 YELLOW0='\033[0;33m'
 TODO_COLOR='\033[0;34;47m'
 
+# VARIABLES ERREURS
+ERRORS_ARRAY=
+E_CONNEXION=22
+E_PARAMETRE=11
+E_NOTERROR=99
 
 # FONCTIONS
 
@@ -128,22 +133,60 @@ uncompress() {
 		return 99
 	fi
 
-	return 0;
+	return 0
+}
+
+
+# @name mysqlerrconnexion
+# execute des actions dans le cad'un echec de connexion mysql
+# @return E_CONNEXION
+mysqlerrconnexion() {
+    echo -e "$RED mysql user et/ou password ne sont pas valides !$ENDCOLOR\n"
+    mysqlerr=1
+    return $E_CONNEXION
+}
+
+
+# @name testmysqlconnexions
+# teste la connexion mysql
+# demande en prompt user et mdp et les enregistre avec un EXPORT
+# @return : E_CONNEXION si il y a erreur, 0 si connexion OK
+# @TODO : si erreur connexion donner la possibilité de nouvelle tentative
+testmysqlconnexion() {
+	if [ "$MYSQLUSR" != "" ]; then
+		return 0
+	fi
+
+	mysqlerr=0
+	read -p "mysql user ? " mysqlusr
+	read -sp "mysql password ? " mysqlpswd
+	
+	echo "exit" | mysql -u $mysqlusr -p$mysqlpswd || mysqlerrconnexion 2>&1
+
+	if [ "$mysqlerr" = "1" ]; then
+		return $E_CONNEXION
+	fi
+
+	export MYSQLUSR=${mysqlusr}
+	export MYSQLPSWD=${mysqlpswd}
+
+	return 0
 }
 
 
 # @name mysqlexec
 # execute des operations mysql
-#
 # @param1 : "f" ou "e"
-# @param : si "f" fichier.sql; si "e" statement
-#
+# @param2 : si "f" fichier.sql; si "e" statement
 # @TODO : quoi faire si on a pas passé de parametres ?
 mysqlexec() {
-    testmysqlconnexion
-    if [ $? -ne 0 ]; then
-        echo -e "$RED mysql user et/ou password ne sont pas valides !$ENDCOLOR"
-        return 90
+	testmysqlconnexion 2>&1
+	local cnx=$?
+	#echo -e "\n$MYSQLUSR $MYSQLPSWD\n"
+
+    if [ $cnx -ne 0 ]; then
+        return $E_CONNEXION
+    fi
 	if [ "$1" == "f" ]; then
         if [ "$MYSQLPSWD" == "" ]; then
             mysql -u $MYSQLUSR --default-character-set=utf8 < "$2"
@@ -158,8 +201,8 @@ mysqlexec() {
         fi
 	else
 		echo -e "$RED option -$1 n'existe pas ! $ENDCOLOR"
-		return 99
+		return $E_PARAMETRE
 	fi
 
-	return 0;
+	return 0
 }

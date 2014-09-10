@@ -107,7 +107,7 @@ goornotgo "créer la base de données pour le projet ? "
 GO=$?
 if [ "$GO" == 0 ]; then
 {
-    ./ezinit_createdb.sh $PROJNAME
+    ./ezinit_createdb.sh $PROJNAME 2>&1
     wait
 }
 else

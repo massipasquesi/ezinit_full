@@ -52,7 +52,8 @@ if [ "$JUMP" == false ]; then
     wait
 
     # se connecte à mysql et execute le create database statement
-    mysqlexec "f" "temp_ezinitdb.sql"
+    mysqlexec "f" "temp_ezinitdb.sql" 2>&1
+    #echo $?
 
     # supprime temp_ezinitdb.sql
     rm -v temp_ezinitdb.sql
